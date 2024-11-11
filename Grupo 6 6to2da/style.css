@@ -1,0 +1,181 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.boton-enlace{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor:pointer;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;    
+    background-color:white;
+    display: grid;
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #0077be, #00a86b);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    animation: headerFade 1s ease-in;
+}
+
+@keyframes headerFade {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Attractions section */
+#attractions {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+}
+
+#attractions h2 {
+    text-align: center;
+    color: #0077be;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Attraction articles */
+article {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    background: #00a86b;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+article p {
+    padding: 1rem;
+}
+
+/* Image placeholders for attractions */
+article::before {
+    content: '';
+    display: block;
+    height: 200px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.3s ease;
+}
+
+article:hover::before {
+    opacity: 0.8;
+}
+
+/* Specific images for each attraction */
+#dome::before { background-image: url(./img/santuario.png); }
+#stadium::before { background-image: url(./img/estadio.jpg); }
+#ecopark::before { background-image: url(./img/ecoparque.jpeg); }
+#agreement-house::before { background-image: url(./img/casadelacuerdo.jpeg); }
+#downtown-area::before { background-image: url(./img/zonacentro.jpeg); }
+#theater::before { background-image: url(./img/teatronicoleño.webp); }
+#cemetery::before { background-image: url(./img/cementerio.jpg); }
+#mitre-square::before { background-image: url(./img/mitre.jpeg); }
+#racetrack::before { background-image: url(./img/autodromo.jpeg); }
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Animation for articles */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+article {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+article:nth-child(1) { animation-delay: 0.1s; }
+article:nth-child(2) { animation-delay: 0.2s; }
+article:nth-child(3) { animation-delay: 0.3s; }
+article:nth-child(4) { animation-delay: 0.4s; }
+article:nth-child(5) { animation-delay: 0.5s; }
+article:nth-child(6) { animation-delay: 0.6s; }
+article:nth-child(7) { animation-delay: 0.7s; }
+article:nth-child(8) { animation-delay: 0.8s; }
+article:nth-child(9) { animation-delay: 0.9s; }
+
+/* Responsive design */
+@media (min-width: 768px) {
+    #attractions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #attractions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    #attractions h2 {
+        font-size: 1.8rem;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+}
